@@ -4,17 +4,22 @@ import Helmet from "react-helmet";
 import GranimCanvas from "react-granim-canvas";
 import styled from "styled-components";
 import "./reset.css";
+import "./global.css";
 
-const BackgroundWrapper = styled.canvas`
-  position: absolute;
-  z-index: -1;
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+const SiteWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  min-height: 100vh;
+  color: #fff;
+`;
+
+const SiteContainer = styled.div`
+  max-width: 700px;
+  text-align: center;
+  padding: 25px;
+  margin: 0 auto;
 `;
 
 class TemplateWrapper extends Component {
@@ -33,6 +38,20 @@ class TemplateWrapper extends Component {
     };
   }
 
+  bgCanvasStyle() {
+    return {
+      position: "absolute",
+      zIndex: -1,
+      display: "block",
+      width: "100%",
+      height: "100%",
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0
+    };
+  }
+
   render() {
     const { children } = this.props;
 
@@ -45,8 +64,13 @@ class TemplateWrapper extends Component {
             { name: "keywords", content: "sample, something" }
           ]}
         />
-        <GranimCanvas states={this.bgCanvasState()} />
-        <div>{children()}</div>
+        <GranimCanvas
+          states={this.bgCanvasState()}
+          style={this.bgCanvasStyle()}
+        />
+        <SiteWrapper>
+          <SiteContainer>{children()}</SiteContainer>
+        </SiteWrapper>
       </div>
     );
   }
