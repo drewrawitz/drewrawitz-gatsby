@@ -5,9 +5,10 @@ import { em } from "polished";
 
 const StyledButton = styled.button`
   display: inline-block;
-  padding: ${em("10px")} ${em("20px")};
+  padding: ${em("12px")} ${em("35px")};
   border: ${em("2px")} solid #fff;
   cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
+  text-transform: uppercase;
   transition: all 0.3s ease-in-out;
   ${props =>
     props.size === "small" &&
@@ -37,12 +38,17 @@ const StyledButton = styled.button`
 
 const StyledLink = StyledButton.withComponent("a").extend`
     text-decoration: none;
+    color: inherit;
 `;
 
 const Button = props => {
   const ButtonWrapper = props.href ? StyledLink : StyledButton;
 
-  return <ButtonWrapper {...props}>{props.children}</ButtonWrapper>;
+  return (
+    <ButtonWrapper {...props} className="hvr-bounce-to-right">
+      {props.children}
+    </ButtonWrapper>
+  );
 };
 
 Button.propTypes = {

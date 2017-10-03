@@ -2,14 +2,14 @@ import React from "react";
 import Button from "../components/button";
 import styled from "styled-components";
 import { em } from "polished";
-import logo from "../assets/img/drlogo4.png";
+import logo from "../assets/img/l_drewrawitz.png";
 import IconGithub from "../assets/svg/github.svg";
 import IconTwitter from "../assets/svg/twitter.svg";
 import IconInstagram from "../assets/svg/instagram.svg";
 import IconLinkedIn from "../assets/svg/linkedin.svg";
 import IconStackOverflow from "../assets/svg/stackoverflow.svg";
 
-const LogoWrapper = styled.div`max-width: ${em("300px")};`;
+const LogoWrapper = styled.div`max-width: ${em("350px")};`;
 
 const Logo = styled.img`
   max-width: 100%;
@@ -18,7 +18,7 @@ const Logo = styled.img`
 
 const SocialIconWrapper = styled.div`
   margin-top: ${em("60px")};
-  margin-bottom: ${em("20px")};
+  margin-bottom: ${em("25px")};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,11 +28,18 @@ const SocialIcon = styled.a`
   display: block;
   text-decoration: none;
   color: inherit;
+  transition: transform 0.3s ease-in-out;
 
   &:not(:last-child) {
     margin-right: ${em("20px")};
   }
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
+
+const svgWidth = 25;
 
 const IndexPage = () => (
   <div>
@@ -41,39 +48,28 @@ const IndexPage = () => (
     </LogoWrapper>
     <SocialIconWrapper>
       <SocialIcon href="https://www.github.com/drewrawitz" target="_blank">
-        <IconGithub width={30} />
+        <IconGithub width={svgWidth} />
       </SocialIcon>
       <SocialIcon href="https://www.instagram.com/dem0x7" target="_blank">
-        <IconInstagram width={30} />
+        <IconInstagram width={svgWidth} />
       </SocialIcon>
       <SocialIcon href="https://www.twitter.com/drewrawitz" target="_blank">
-        <IconTwitter width={30} />
+        <IconTwitter width={svgWidth} />
       </SocialIcon>
       <SocialIcon
         href="http://stackoverflow.com/users/799653/drew"
         target="_blank"
       >
-        <IconStackOverflow width={30} />
+        <IconStackOverflow width={svgWidth} />
       </SocialIcon>
       <SocialIcon
         href="http://www.linkedin.com/pub/drew-rawitz/78/97b/2b7"
         target="_blank"
       >
-        <IconLinkedIn width={30} />
+        <IconLinkedIn width={svgWidth} />
       </SocialIcon>
     </SocialIconWrapper>
-    <Button>Get in touch</Button>
-
-    {/* <Copy>
-      I enjoy playing with cutting edge web technologies and building beautiful
-      websites. My job involves doing what I love, developing new websites and
-      applications. I absolutely love learning new things and taking on new
-      challenges. A more detailed look at my professional capabilities and
-      experience is available in my resume, which is available upon request.
-    </Copy>
-    <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-
-    <Button>Get in touch</Button> */}
+    <Button href="mailto:email@drewrawitz.com">Get in touch</Button>
   </div>
 );
 

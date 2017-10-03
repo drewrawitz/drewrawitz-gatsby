@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import GranimCanvas from "react-granim-canvas";
 import styled from "styled-components";
-import "./reset.css";
-import "./global.css";
+import "../assets/css/reset.css";
+import "../assets/css/global.css";
 
 const SiteWrapper = styled.div`
   display: flex;
