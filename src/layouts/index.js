@@ -1,43 +1,56 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import Granim from "granim";
+import GranimCanvas from "react-granim-canvas";
+import styled from "styled-components";
 import "./reset.css";
 
-const granimInstance = new Granim({
-  element: "#canvas-bg",
-  name: "basic-gradient",
-  direction: "left-right",
-  opacity: [1, 1],
-  isPausedWhenNotInView: true,
-  states: {
-    "default-state": {
-      gradients: [
-        ["#000428", "#004e92"],
-        ["#00a0bd", "#00CDAC"],
-        ["#002228", "#009260"],
-        ["#42275a", "#734b6d"],
-        ["#B24592", "#F15F79"]
-      ]
-    }
+const BackgroundWrapper = styled.canvas`
+  position: absolute;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+`;
+
+class TemplateWrapper extends Component {
+  bgCanvasState() {
+    return {
+      "default-state": {
+        gradients: [
+          ["#000428", "#004e92"],
+          ["#00a0bd", "#00CDAC"],
+          ["#002228", "#009260"],
+          ["#42275a", "#734b6d"],
+          ["#B24592", "#F15F79"]
+        ],
+        transitionSpeed: 5000
+      }
+    };
   }
-});
 
-granimInstance.play();
+  render() {
+    const { children } = this.props;
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="Gatsby Default Starter"
-      meta={[
-        { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" }
-      ]}
-    />
-    <canvas id="canvas-bg" class="full-page-bg" />
-    <div>{children()}</div>
-  </div>
-);
+    return (
+      <div>
+        <Helmet
+          title="Gatsby Default Starter"
+          meta={[
+            { name: "description", content: "Sample" },
+            { name: "keywords", content: "sample, something" }
+          ]}
+        />
+        <GranimCanvas states={this.bgCanvasState()} />
+        <div>{children()}</div>
+      </div>
+    );
+  }
+}
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func

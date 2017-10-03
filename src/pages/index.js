@@ -15,7 +15,7 @@ const IndexPage = () => (
     </p>
 
     <p>
-      <a href="#" class="c-btn">
+      <a href="#" className="c-btn">
         Get in Touch
       </a>
     </p>
