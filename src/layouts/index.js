@@ -31,10 +31,6 @@ class TemplateWrapper extends Component {
           ["#004e92", "#00a0bd"],
           ["#004e92", "#000428"],
           ["#00a0bd", "#004e92"]
-          // ["#00a0bd", "#00CDAC"],
-          // ["#002228", "#009260"],
-          // ["#42275a", "#734b6d"],
-          // ["#B24592", "#F15F79"]
         ],
         transitionSpeed: 5000
       }
