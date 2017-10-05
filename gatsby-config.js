@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/drewrawitz-v2`,
   siteMetadata: {
     title: `Gatsby Default Starter`,
   },
