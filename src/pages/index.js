@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../components/button";
 import styled from "styled-components";
 import { em } from "polished";
-import logo from "../assets/img/l_drewrawitz.png";
+import logo from "../assets/img/l_drewrawitz-avatar.png";
 import IconGithub from "../assets/svg/github.svg";
 import IconTwitter from "../assets/svg/twitter.svg";
 import IconInstagram from "../assets/svg/instagram.svg";
