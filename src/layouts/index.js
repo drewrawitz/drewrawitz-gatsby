@@ -61,10 +61,10 @@ class TemplateWrapper extends Component {
     return (
       <div>
         <Helmet
-          title="Gatsby Default Starter"
+          title="Drew Rawitz - Web Developer in Raleigh, NC"
           meta={[
-            { name: "description", content: "Sample" },
-            { name: "keywords", content: "sample, something" }
+            { name: "description", content: "My name is Drew Rawitz, I am a front-end web developer in Raleigh, North Carolina. I absolutely love learning new things and taking on new challenges." },
+            { name: "keywords", content: "drew rawitz, web developer" }
           ]}
         />
         <GranimCanvas
