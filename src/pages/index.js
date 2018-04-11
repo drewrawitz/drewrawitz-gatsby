@@ -50,7 +50,7 @@ const IndexPage = () => (
       <SocialIcon href="https://www.github.com/drewrawitz" target="_blank">
         <IconGithub width={svgWidth} />
       </SocialIcon>
-      <SocialIcon href="https://www.instagram.com/dem0x7" target="_blank">
+      <SocialIcon href="https://www.instagram.com/drewrawitz" target="_blank">
         <IconInstagram width={svgWidth} />
       </SocialIcon>
       <SocialIcon href="https://www.twitter.com/drewrawitz" target="_blank">
